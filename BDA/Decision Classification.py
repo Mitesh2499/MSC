@@ -20,7 +20,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y, random_state = 50, test_size = 0.25)
 
 # Creating Decision Tree Classifier
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier, plot_tree
 clf = DecisionTreeClassifier()
 clf.fit(X_train,y_train)
 
@@ -36,7 +36,7 @@ from sklearn import tree
 from matplotlib import pyplot  as plt
 
 fig = plt.figure(figsize=(25,20))
-_ = tree.plot_tree(clf, 
+_ =  plot_tree(clf, 
                    feature_names=data.feature_names,  
                    class_names=data.target_names,
                    filled=True)
